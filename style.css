@@ -1087,6 +1087,18 @@ header {
 .tailwind {
     width: 85%;
 }
+.node {
+    width: 82%;
+}
+
+.express {
+    width: 80%;
+}
+
+.mongodb {
+    width: 78%;
+}
+
 
 @keyframes grow {
 
