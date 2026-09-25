@@ -22,10 +22,10 @@ window.addEventListener("load", () => {
 const typing = document.getElementById("typing");
 
 const words = [
-    "Frontend Web Developer",
-    "JavaScript Developer",
+    "Full Stack MERN Developer",
     "React Developer",
-    "UI Enthusiast"
+    "Node.js Developer",
+    "MERN Stack Enthusiast"
 ];
 
 let wordIndex = 0;
