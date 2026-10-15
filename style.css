@@ -1098,6 +1098,12 @@ header {
 .mongodb {
     width: 78%;
 }
+.jwt {
+   width: 75%;
+}
+.vercel { 
+   width: 70%; 
+}
 
 
 @keyframes grow {
