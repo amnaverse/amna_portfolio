@@ -2027,3 +2027,15 @@ PROJECTS v2: FEATURED + UTILITIES
 @media (max-width: 991px) {
     .premium-projects-grid { grid-template-columns: 1fr; }
 }
+.about-text {
+    display: block !important;
+    column-count: 1 !important;
+}
+
+.about-text p {
+    margin: 0 0 16px;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
