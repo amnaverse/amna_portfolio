@@ -1101,6 +1101,9 @@ header {
 .jwt {
    width: 75%;
 }
+.ai {
+   width: 65%;
+}
 .vercel { 
    width: 70%; 
 }
