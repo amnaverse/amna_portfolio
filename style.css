@@ -1107,7 +1107,9 @@ header {
 .vercel { 
    width: 70%; 
 }
-
+ .suga {
+    width: 75%;
+ }
 
 @keyframes grow {
 
