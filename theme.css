@@ -1,0 +1,156 @@
+/* ==========================================================
+   THEME.CSS  |  Light mode + theme toggle button
+   Load this AFTER style.css. Dark stays the default design
+   (all dark values live in style.css); this file only adds
+   the light theme and the toggle button styles.
+========================================================== */
+
+/* ---------- Toggle button ---------- */
+
+.theme-toggle {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+    transition: .35s;
+}
+
+.theme-toggle:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    transform: rotate(15deg);
+}
+
+/* Smooth colour change when switching */
+
+body {
+    transition: background-color .3s ease, color .3s ease;
+}
+
+/* ---------- LIGHT THEME TOKENS ---------- */
+
+[data-theme="light"] {
+    --bg: #F7F8FA;
+    --bg-alt: #FFFFFF;
+    --bg-alt-2: #EEF0F4;
+
+    --text: #1A1D24;
+    --text-muted: #5B6475;
+
+    --accent: #B45309;
+    --accent-dim: rgba(180, 83, 9, .12);
+    --accent-soft: rgba(180, 83, 9, .35);
+
+    --border: rgba(15, 23, 42, .12);
+}
+
+/* Page background (grid + soft glows) */
+
+[data-theme="light"] body {
+    background-image:
+        radial-gradient(circle at 15% 10%, rgba(180, 83, 9, .07), transparent 40%),
+        radial-gradient(circle at 85% 0%, rgba(15, 23, 42, .04), transparent 35%),
+        linear-gradient(rgba(15, 23, 42, .045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15, 23, 42, .045) 1px, transparent 1px);
+}
+
+[data-theme="light"] ::selection {
+    background: var(--accent);
+    color: #fff;
+}
+
+/* Header / navbar */
+
+[data-theme="light"] header {
+    background: rgba(247, 248, 250, .85);
+    border-bottom: 1px solid rgba(15, 23, 42, .08);
+}
+
+/* Buttons: text on the amber fill must be white in light mode */
+
+[data-theme="light"] .btn:hover,
+[data-theme="light"] .skill-card:hover,
+[data-theme="light"] .social a:hover,
+[data-theme="light"] .project-btn:hover,
+[data-theme="light"] .project-btn-primary,
+[data-theme="light"] .contact-icons a:hover {
+    color: #fff;
+}
+
+[data-theme="light"] .project-btn-primary:hover {
+    color: var(--accent);
+}
+
+[data-theme="light"] .btn-outline {
+    border-color: rgba(15, 23, 42, .2);
+}
+
+[data-theme="light"] .btn-outline:hover {
+    background: var(--text);
+    color: #fff;
+    border-color: var(--text);
+}
+
+/* Hero image shadows (lighter than the dark version) */
+
+[data-theme="light"] .hero-image img {
+    box-shadow:
+        0 0 50px rgba(180, 83, 9, .15),
+        0 12px 40px rgba(15, 23, 42, .15);
+}
+
+[data-theme="light"] .hero-image img:hover {
+    box-shadow: 0 0 70px rgba(180, 83, 9, .3);
+}
+
+/* Card hover shadows */
+
+[data-theme="light"] .about-text:hover,
+[data-theme="light"] .about-info:hover,
+[data-theme="light"] .timeline-box:hover,
+[data-theme="light"] .project-card:hover {
+    box-shadow: 0 18px 36px rgba(15, 23, 42, .12), 0 0 24px rgba(180, 83, 9, .06);
+}
+
+/* Skills progress track */
+
+[data-theme="light"] .progress {
+    background: var(--bg-alt-2);
+}
+
+/* Small utility cards */
+
+[data-theme="light"] .util-card {
+    background: rgba(15, 23, 42, .03);
+}
+
+/* Tech badges: darker colours so they stay readable on light cards */
+
+[data-theme="light"] .b-react    { background: rgba(14, 116, 144, .10); color: #0e7490; border-color: rgba(14, 116, 144, .28); }
+[data-theme="light"] .b-node     { background: rgba(21, 128, 61, .10);  color: #15803d; border-color: rgba(21, 128, 61, .28); }
+[data-theme="light"] .b-express  { background: rgba(71, 85, 105, .10);  color: #475569; border-color: rgba(71, 85, 105, .28); }
+[data-theme="light"] .b-mongo    { background: rgba(22, 101, 52, .10);  color: #166534; border-color: rgba(22, 101, 52, .30); }
+[data-theme="light"] .b-tailwind { background: rgba(15, 118, 110, .10); color: #0f766e; border-color: rgba(15, 118, 110, .28); }
+[data-theme="light"] .b-vite     { background: rgba(109, 40, 217, .10); color: #6d28d9; border-color: rgba(109, 40, 217, .28); }
+[data-theme="light"] .b-router   { background: rgba(185, 28, 28, .10);  color: #b91c1c; border-color: rgba(185, 28, 28, .28); }
+[data-theme="light"] .b-api      { background: rgba(180, 83, 9, .10);   color: #b45309; border-color: rgba(180, 83, 9, .30); }
+[data-theme="light"] .b-svg      { background: rgba(190, 24, 93, .10);  color: #be185d; border-color: rgba(190, 24, 93, .28); }
+[data-theme="light"] .b-jwt      { background: rgba(194, 65, 12, .10);  color: #c2410c; border-color: rgba(194, 65, 12, .28); }
+[data-theme="light"] .b-ai       { background: rgba(190, 24, 93, .10);  color: #be185d; border-color: rgba(190, 24, 93, .28); }
+[data-theme="light"] .b-deploy   { background: rgba(15, 23, 42, .05);   color: var(--text-muted); border-color: var(--border); }
+
+/* Mobile slide-in menu */
+
+@media (max-width: 991px) {
+    [data-theme="light"] .nav-links {
+        background: rgba(247, 248, 250, .97);
+    }
+}
