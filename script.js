@@ -155,35 +155,20 @@ window.addEventListener("scroll", () => {
 
 });
 
-// =============================
-// HAMBURGER / MOBILE MENU
-// =============================
+(function () {
+  const siteHeader = document.querySelector('header');
+  const burger = document.getElementById('hamburger');
+  const menu = document.getElementById('navLinks');
+  if (!siteHeader || !burger || !menu) return;
 
-const hamburger = document.getElementById("hamburger");
-const navList = document.getElementById("navLinks");
-
-if (hamburger && navList) {
-
-    hamburger.addEventListener("click", () => {
-
-        hamburger.classList.toggle("active");
-        navList.classList.toggle("show");
-
-    });
-
-    // Close mobile menu when a link is clicked
-    navLinks.forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            hamburger.classList.remove("active");
-            navList.classList.remove("show");
-
-        });
-
-    });
-
-}
+  burger.addEventListener('click', () => siteHeader.classList.toggle('is-open'));
+  menu.querySelectorAll('a').forEach((a) =>
+    a.addEventListener('click', () => siteHeader.classList.remove('is-open'))
+  );
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1200) siteHeader.classList.remove('is-open');
+  });
+})();
 
 // =============================
 // SMOOTH HOVER
