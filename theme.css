@@ -154,3 +154,37 @@ body {
         background: rgba(247, 248, 250, .97);
     }
 }
+@media (max-width: 1200px) {
+    header.is-open .nav-links {
+        display: flex !important;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        z-index: 1001;
+        background: #0f0f0f;
+        padding: 8px 5%;
+        border-bottom: 1px solid rgba(255, 255, 255, .12);
+    }
+
+    header.is-open .nav-links a {
+        color: #ffffff;
+        font-size: 16px;
+    }
+
+    [data-theme="light"] header.is-open .nav-links {
+        background: #ffffff;
+        border-bottom: 1px solid rgba(0, 0, 0, .12);
+    }
+
+    [data-theme="light"] header.is-open .nav-links a {
+        color: #222222;
+    }
+
+    header.is-open .nav-links li {
+        display: block;
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(128, 128, 128, .2);
+    }
+}
